@@ -1,0 +1,9 @@
+{
+  "total": "numeric",
+  "limit": "numeric",
+  "skip": "numeric",
+  "data": {
+    "name": "string",
+    "description": "string"
+  }
+}
