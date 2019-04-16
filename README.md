@@ -6,11 +6,11 @@ Tests are provided against open Best Buy API playground, which have many example
 All the tests are placed in the feature files.
 They are self-explanatory and work like a documentation themselves
 There are test scenarios for:
-* (Products API)[https://github.com/github/b_buy_api_tests/blob/master/features/productsApi.feature]
-* (Categories API)[https://github.com/github/b_buy_api_tests/blob/master/features/categoriesApi.feature]
-* (Stores API)[https://github.com/github/b_buy_api_tests/blob/master/features/storesApi.feature]
-* (Services API)[https://github.com/github/b_buy_api_tests/blob/master/features/servicesApi.feature]
-* (Service - Healthcheck and Version API's)[https://github.com/github/b_buy_api_tests/blob/master/features/serviceApi.feature]
+* [Products API](https://github.com/github/b_buy_api_tests/blob/master/features/productsApi.feature)
+* [Categories API](https://github.com/github/b_buy_api_tests/blob/master/features/categoriesApi.feature)
+* [Stores API](https://github.com/github/b_buy_api_tests/blob/master/features/storesApi.feature)
+* [Services API](https://github.com/github/b_buy_api_tests/blob/master/features/servicesApi.feature)
+* [Service - Healthcheck and Version API's](https://github.com/github/b_buy_api_tests/blob/master/features/serviceApi.feature)
 
 ### Installation
 
