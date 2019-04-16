@@ -1,0 +1,6 @@
+{"uptime" : "numeric",
+  "readonly" : "boolean",
+  "documents" : {"products" : "numeric",
+                 "stores" : "numeric",
+                 "categories": "numeric"}
+}

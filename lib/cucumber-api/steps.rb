@@ -127,7 +127,6 @@ When(/^I send a (GET|POST|PATCH|PUT|DELETE) request to "(.*?)"$/) do |method, ur
     response = e.response
   end
   @response = CucumberApi::Response.create response
-  print @response
   @headers = nil
   @body = nil
   $cache[%/#{request_url}/] = @response if 'GET' == %/#{method}/

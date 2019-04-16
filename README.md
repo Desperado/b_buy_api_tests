@@ -1,7 +1,16 @@
 ### About
 
-Good example of Rest API test framework in BDD format, based on [Cucumber](https://cucumber.io/) with Cucumber API Steps
+Good example of Rest API test framework in BDD format, based on [Cucumber](https://cucumber.io/) with [Cucumber API Steps](https://github.com/hidroh/cucumber-api) validators
 Tests are provided against open Best Buy API playground, which have many examples of rich RESTful API
+
+All the tests are placed in the feature files.
+They are self-explanatory and work like a documentation themselves
+There are test scenarios for:
+ (Products API)[https://github.com/github/b_buy_api_test/blob/master/features/productsApi.feature]
+ (Categories API)[https://github.com/github/b_buy_api_test/blob/master/features/categoriesApi.feature]
+ (Stores API)[https://github.com/github/b_buy_api_test/blob/master/features/storesApi.feature]
+ (Services API)[https://github.com/github/b_buy_api_test/blob/master/features/servicesApi.feature]
+ (Service - Healthcheck and Version API's)[https://github.com/github/b_buy_api_test/blob/master/features/serviceApi.feature]
 
 ### Installation
 

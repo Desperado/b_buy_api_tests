@@ -1,4 +1,4 @@
-Feature: API
+Feature: Products API
 
   Scenario Outline: Verify all products
     Given I send and accept JSON
@@ -8,7 +8,6 @@ Feature: API
     And the JSON response should have <optionality> key "<key>" of type <value type>
     And  the JSON response should have "limit" of type numeric and value "10"
     And  the JSON response should have "skip" of type numeric and value "0"
-    #And  the JSON response should have "total" of type numeric and value "51957"
     Examples:
       | key    | value type | optionality |
       | total  | numeric    | required    |
@@ -22,10 +21,6 @@ Feature: API
     Then the response status should be "200"
     And the JSON response root should be object
     And the JSON response should have <optionality> key "<key>" of type <value type>
-  #And the JSON response should have "id" of type numeric and value "{id}"
-#    And  the JSON response should have "limit" of type numeric and value "10"
-#    And  the JSON response should have "skip" of type numeric and value "0"
-#    And  the JSON response should have "total" of type numeric and value "51957"
     Examples:
       | key   | value type | optionality |
       | id    | numeric    | required    |
@@ -96,3 +91,21 @@ Feature: API
     And the JSON response should follow "features/schemas/products_name_desc.json"
     And the JSON response should have "$.data[0].shipping" of type numeric and value "0"
     And the JSON response should have "$.data[0].categories[1].name" of type string and value "TVs"
+
+  Scenario: Verify price sorting of products
+    Given I send and accept JSON
+    When I send a GET request to "localhost:3030/products?$sort[price]=1"
+    Then the response status should be "200"
+    And the JSON response root should be object
+    Then the JSON response should have "$.data[0].price" of type numeric and value "0.01"
+    When I send a GET request to "localhost:3030/products?$sort[price]=-1"
+    Then the response status should be "200"
+    And the JSON response root should be object
+    Then the JSON response should have "$.data[0].price" of type numeric and value "27999.98"
+
+  Scenario: Verify product filter by category
+    Given I send and accept JSON
+    When I send a GET request to "localhost:3030/products?category.name=Coffee Pods"
+    Then the response status should be "200"
+    And the JSON response root should be object
+    And the JSON response should have "$.data[0].categories[2].name" of type string and value "Coffee Pods"

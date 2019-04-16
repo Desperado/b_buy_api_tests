@@ -1,6 +1,6 @@
 Feature: API
 
-  Scenario: Create new product
+  Scenario: CRUD Scenario for new store
     Given I send and accept JSON
     And I clear the response cache
     When I set JSON request body to:
@@ -25,7 +25,6 @@ Feature: API
     Then the JSON response should have "city" of type string and value "Berlin"
     When I grab "$..id"
     And I send and accept JSON
-    #And I clear the response cache
     And I set JSON request body to:
     """
     {
@@ -37,4 +36,9 @@ Feature: API
     Then the response status should be "200"
     And the JSON response root should be object
     Then the JSON response should have "city" of type string and value "Brandenburg"
+    And I send and accept JSON
+    When I send a DELETE request to "http://localhost:3030/stores/{id}"
+    Then the response status should be "200"
+    When I send a DELETE request to "http://localhost:3030/stores/{id}"
+    Then the response status should be "404"
 
